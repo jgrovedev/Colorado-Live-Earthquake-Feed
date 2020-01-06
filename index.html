@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Colorado Live Earthquake Feed</title>
+    <meta charset="utf-8" />
+    <!--LOADS leaflet 1.6.0 CDN-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+    <!--LOADS jquery-3.4.1.js CDN-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>    
+    <!--LOADS <body> stylesheet-->
+    <link type="text/css" rel="stylesheet" href="style_blank.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> 
+    <!--LOADS leaflet markercluster plugin-->
+    <link rel="stylesheet" href="Plugins\MarkerCluster\MarkerCluster.css">
+    <link rel="stylesheet" href="Plugins\MarkerCluster\MarkerCluster.Default.css">
+    <script src="Plugins\MarkerCluster\leaflet.markercluster.js"></script>
+    <!--LOADS heatmap-->
+    <script src="Plugins/leaflet-heat.js"></script>
+    <!--LOADS geojson data-->
+    <script src="Data/countyBorders.js"></script>
+    <script src="Data/qFaults.js"></script>
+    <script src="Data/activeWells.js"></script> 
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar">
+        <div class="logo">
+            <h4>Colorado Live Earthquake Feed</h4>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#simpleModal" id="aboutModal">About</a></li>
+            <li><a href="#legend" id="legend">Legend</a></li>
+        </ul>
+    </nav>
+    <!--About Modal-->
+    <div id="simpleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>About</h2>
+            </div>
+            <div class="modal-body">
+            <p>This live feed earthquake map is updated with each webpage reload. Only earthquakes within the past 30 days are displayed. Quaternary faults, active oil and gas wells, and county borders are available to be toggled on/off. </p>
+            <h3>&nbsp;&nbsp;&nbsp;Data Sources</h3>
+            <ul>
+                <li><a target="_blank" href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson">USGS Earthquakes</a>&nbsp;&nbsp;&nbsp;(Updated realtime)</li>
+                <li><a target="_blank" href="https://cgsarcimage.mines.edu/arcgis/rest/services/cgs_services/Fault_Server/MapServer/9/query?where=1%3D1&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&f=geojson">Quaternary Faults</a></li>
+                <li><a target="_blank" href="https://data-cdphe.opendata.arcgis.com/datasets/66c2642209684b90af84afcc559a5a02_5">County Boundaries</a></li>
+                <li><a target="_blank" href="https://cogcc.state.co.us/documents/data/downloads/gis/metadata/Permits_Metadata.html">Active Oil and Gas Wells</a>&nbsp;&nbsp;&nbsp;(Updated on 12/15/2019)</li>
+            </ul>
+            <div class="modal-footer">
+                <button class="closeBtn">&#10004 Got it!</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!--Leaflet Map-->
+    <div id="map"></div>    
+    <!--LOADS leaflet map custimization-->
+    <script src="main.js"></script>  
+</body>
+
+</html>

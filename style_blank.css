@@ -1,0 +1,183 @@
+/*CSS for leaflet map*/
+html, body{
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        margin: 0; /*removes white space at edges*/
+        
+}
+
+#map{
+  overflow: hidden;
+  height: 97%; /*minus nav bar height*/
+  width: 100%;
+  margin: 0; /*removes white space at edges*/
+  z-index: 1;
+}
+
+/*CSS for nav bar*/
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3%;
+  background-color: darkslategray;
+  font-family: 'Raleway', sans-serif;
+}
+
+.nav-links {
+  display: flex
+}
+
+.nav-links li{
+  padding-right: 15px;
+  text-align: right;
+  list-style: none;
+}
+
+.nav-links a{
+  text-decoration: none;
+  color: rgb(226, 235, 248);
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.logo{
+  color: rgba(226, 235, 248);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 20px;
+  text-align: left;
+  padding-left: 15px;
+}
+
+/*CSS for modal*/
+.modal{
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content{
+  background-color: black;
+  color: #bbb;
+  margin: 9% auto;
+  width: 500px;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgb(0,0,0,0.2);
+  animation-name: modalopen;
+  animation-duration: 1s;
+  border-radius: 10px;
+}
+
+.modal-header h2{
+  background-color: #2f4f4f;
+  color: rgba(226, 235, 248);
+  padding: 12px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 16px;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.modal-body p{
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 14pt;
+}
+
+.modal-body a{
+  color: rgba(0, 255, 255, 0.603);
+  font-size: 14pt;
+}
+
+.modal-footer{
+  background-color: black;
+  color: rgba(226, 235, 248);
+  padding: 12px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif; 
+  text-align: center; 
+  border-collapse: separate;
+  border-radius: 10px;
+}
+
+.closeBtn{
+  background-color: darkslategray;
+  color: rgba(226, 235, 248);
+  font-size: 16px;
+  border-radius: 10px;
+  font-family: 'Raleway', sans-serif;  
+  padding: 6px;
+  border: none;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.closeBtn:hover,.closeBtn:focus{
+  color: darkslategray;
+  text-decoration: none;
+  cursor: pointer;
+  background-color:rgba(226, 235, 248);
+}
+
+@keyframes modalopen{
+  from {opacity: 0}
+  to {opacity: 1} 
+}
+
+/*CSS for legend*/
+.info {
+  padding: 6px 8px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  }
+
+.legend {
+  background-color: “black”;
+  line-height: 26px;
+  color: #555;
+  width: auto;
+  display: block;
+}
+
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+
+.legend .circle { /*makes circles instead of squares displayed on legend*/
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin-top: 7px;
+  border: 1px solid black;
+  opacity: .6;
+  border: 1.5px solid rgb(0, 0, 0);
+}
+
+.leaflet-container .leaflet-control-mouseposition {
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 5px #bbb;
+  padding: 0 5px;
+  margin:0;
+  color: #333;
+  font: 11px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
