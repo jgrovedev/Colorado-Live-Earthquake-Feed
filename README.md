@@ -2,7 +2,7 @@
 A Colorado earthquake feed that displays faults and active oil/gas wells.
 
 ## Motivation
-After I plotted earthquakes, I noticed a cluster of them and then plotted faults and active oil and gas wells to see if they had any spatial significance.  
+After I plotted earthquakes, I noticed a cluster of them and then plotted faults and active oil/gas wells to see if they had any spatial significance.  
 
 ## Screenshots
 ![screenshot](https://github.com/jgrovedev/Colorado-Live-Earthquake-Feed/blob/master/coearthquakes.PNG)
